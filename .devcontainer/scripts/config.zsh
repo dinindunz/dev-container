@@ -15,7 +15,7 @@ set_env() {
 }
 
 change_env() {
-    PS3="Select the CMD Lab Environment: "
+    PS3="Select the Mantel Lab Environment: "
 
     select mantel_env in \
         mantel-sandpit1 \
