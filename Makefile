@@ -1,9 +1,9 @@
-.PHONY: all build
+.PHONY: all build push
 
-# Docker build
 build:
 	docker buildx build --platform=linux/amd64 -t dinindunz/dev-container:latest .
+
+push:
 	docker push dinindunz/dev-container:latest
 
-# Run all tasks in sequence
-all: build
+all: build push

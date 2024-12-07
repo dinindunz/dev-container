@@ -47,6 +47,17 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 # Install AWS CDK globally
 RUN npm install -g aws-cdk
 
+# Install ML/AI tools
+RUN python -m pip install -U black mypy ruff
+RUN python -m pip install -U aider-chat
+RUN python -m pip install -U openai ai21 cohere
+RUN python -m pip install -U google google-generativeai google-cloud-aiplatform
+RUN python -m pip install -U langchain langchain-google-vertexai
+RUN python -m pip install -U scikit-learn matplotlib
+RUN python -m pip install -U notebook
+RUN python -m pip install -U numpy pandas keras plotly seaborn
+# RUN python -m pip install -U databricks_genai_interface
+
 # Switch to the 'dev-container' user to set up Oh-My-Zsh and its plugins
 USER dev-container
 

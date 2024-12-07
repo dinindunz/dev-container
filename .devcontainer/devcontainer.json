@@ -33,12 +33,18 @@
 			"extensions": [
 				"amazonwebservices.aws-toolkit-vscode",
 				"dbaeumer.vscode-eslint",
+				"charliermarsh.ruff",
 				"esbenp.prettier-vscode",
+				"matangover.mypy",
+                "mechatroner.rainbow-csv",
 				"ms-azuretools.vscode-docker",
-				"SonarSource.sonarlint-vscode",
+				"ms-python.python",
+                "ms-python.black-formatter",
+                "ms-toolsai.jupyter",
 				"ms-vscode.makefile-tools",
-				"tuxtina.json2yaml",
-				"mutantdino.resourcemonitor"
+				"mutantdino.resourcemonitor",
+				"tamasfe.even-better-toml",
+				"tuxtina.json2yaml"				
 			]
 		}
 	}
