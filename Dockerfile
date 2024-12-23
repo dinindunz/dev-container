@@ -24,6 +24,7 @@ RUN apt-get update -y && \
     jq \
     unzip \
     git \
+    git-lfs \
     gcc \
     g++ \
     make \
@@ -34,6 +35,9 @@ RUN apt-get update -y && \
 # Set Python3 as the default Python version
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
     update-alternatives --set python /usr/bin/python3
+
+# Update pip and install dependencies
+RUN python -m pip install --upgrade pip setuptools wheel
 
 # Install Node.js 18.x
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
@@ -47,16 +51,9 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 # Install AWS CDK globally
 RUN npm install -g aws-cdk
 
-# Install ML/AI tools
-RUN python -m pip install -U black mypy ruff
-RUN python -m pip install -U aider-chat
-RUN python -m pip install -U openai ai21 cohere
-RUN python -m pip install -U google google-generativeai google-cloud-aiplatform
-RUN python -m pip install -U langchain langchain-google-vertexai
-RUN python -m pip install -U scikit-learn matplotlib
-RUN python -m pip install -U notebook
-RUN python -m pip install -U numpy pandas keras plotly seaborn
-# RUN python -m pip install -U databricks_genai_interface
+# Copy requirements.txt and install dependencies
+COPY requirements.txt requirements.txt
+RUN python -m pip install -r requirements.txt
 
 # Switch to the 'dev-container' user to set up Oh-My-Zsh and its plugins
 USER dev-container
