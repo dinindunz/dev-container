@@ -29,3 +29,6 @@ tiktoken
 tqdm
 datasets
 deepface
+ipywidgets
+ipympl
+boto3

@@ -44,7 +44,8 @@
 				"ms-vscode.makefile-tools",
 				"mutantdino.resourcemonitor",
 				"tamasfe.even-better-toml",
-				"tuxtina.json2yaml"				
+				"tuxtina.json2yaml",
+				"goessner.mdmath"		
 			]
 		}
 	}
