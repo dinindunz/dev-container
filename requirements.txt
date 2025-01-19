@@ -32,3 +32,9 @@ deepface
 ipywidgets
 ipympl
 boto3
+aiobotocore
+s3fs
+sagemaker
+jinja2
+gtts
+pydub
